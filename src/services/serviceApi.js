@@ -4,7 +4,8 @@ const API_BASE_URL = process.env.URL || 'http://127.0.0.1:5000/api';
 const AUTH_URL = 'http://127.0.0.1:5000';
 
 // Get JWT token from local storage or cookies
-const getToken = () => localStorage.getItem('token') || Cookies.get('token');
+// const getToken = () => localStorage.getItem('token') || Cookies.get('token');
+const getToken = () => localStorage.getItem('token');
 
 // Generic function to set up headers with JWT token
 const getAuthHeaders = () => {

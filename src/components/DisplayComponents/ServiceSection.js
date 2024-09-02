@@ -1,20 +1,20 @@
 import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
-import { keyframes } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 import displayBg from "../../public/displayBg.jpg";
 import animationImage1 from "../../public/animationImage1.png";
 import animationImage2 from "../../public/animationImage2.png";
 import animationImage3 from "../../public/animationImage3.png";
-import mainCard from "../../public/mainCard.png";
 import scan from "../../public/scan.PNG";
 import mathSolve from "../../public/mathSolve.jpg";
 import mathLearn from "../../public/mathLearn.jpg";
 import { useState } from "react";
 
-const ServiceCard = ({ image, text }) => {
+const ServiceCard = ({ image, text, onClick }) => {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
     <Box
+      onClick={onClick}
       sx={{
         width: isMobile ? "80%" : "20%",
         height: isMobile ? "30%" : "100%",
@@ -25,7 +25,7 @@ const ServiceCard = ({ image, text }) => {
         border: "1px solid #bfbfbf",
         position: "relative",
         color: "#bfbfbf",
-
+        cursor: "pointer", // Add a pointer cursor to indicate it's clickable
         "&:hover": {
           backgroundColor: "#FEB273",
           opacity: "1",
@@ -96,6 +96,7 @@ const ServiceCard = ({ image, text }) => {
 
 export const ServiceSection = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const navigate = useNavigate(); // Initialize the navigate function
 
   const cardInfo = [
     { image: scan, text: "Scan" },
@@ -111,6 +112,10 @@ export const ServiceSection = () => {
 
   const onMouseLeave = () => {
     setHoverClouds(false);
+  };
+
+  const handleCardClick = () => {
+    navigate("/login"); // Navigate to the login page
   };
 
   return (
@@ -210,7 +215,12 @@ export const ServiceSection = () => {
         }}
       >
         {cardInfo.map((info, index) => (
-          <ServiceCard key={index} image={info.image} text={info.text} />
+          <ServiceCard
+            key={index}
+            image={info.image}
+            text={info.text}
+            onClick={handleCardClick} // Pass the click handler
+          />
         ))}
       </Box>
       <style jsx>
@@ -238,7 +248,7 @@ export const ServiceSection = () => {
 
           @keyframes move3 {
             0% {
-              transform: translateZ(0) translateY(0) scale(1) roatate(0);
+              transform: translateZ(0) translateY(0) scale(1) rotate(0);
             }
             100% {
               transform: translateZ(30px) translateY(20px) scale(1.1)

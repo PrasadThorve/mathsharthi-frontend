@@ -133,7 +133,7 @@ export const Footer = () => {
             </Typography>
             <Typography variant="body2">
               <a href="/terms" style={{ color: "#4285f4", textDecoration: "none",}}>
-                Terms of Conditions
+                Terms and Conditions
               </a>
                 .
         </Typography>

@@ -78,7 +78,7 @@ const DisplayPage = () => {
   return (
     <Box
       sx={{
-        width: "98vw",
+        width: "100vw",
         height: "100vh",
         padding: "1%",
         overflow: "auto",

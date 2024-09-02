@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 //pallavi changes
 import Home from "./pages/Home";
 import Chat from "./pages/Chat";
@@ -12,6 +13,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { AppContext } from "./context";
 import DisplayPage from "./pages/DisplayPage";
+import PrivacyPolicy from "./pages/TermAndPrivacy";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -61,6 +63,12 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/terms"
+           element={
+            <ProtectedRoute>
+              <PrivacyPolicy />
+            </ProtectedRoute>
+           } /> 
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

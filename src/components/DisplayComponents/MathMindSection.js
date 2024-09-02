@@ -31,22 +31,9 @@ export const MathMindSection = () => {
           color: "#98A2B3",
         }}
       >
-        Welcome to Math Sharthi, your trusted companion on the journey to
-        mastering mathematics. Whether you're a student looking to strengthen
-        your math skills, a teacher seeking an effective teaching tool, or a
-        math enthusiast eager to explore new concepts, Math Sharthi is here to
-        guide you every step of the way. At Math Sharthi, we believe that math
-        is more than just numbers and equations—it's a powerful tool for solving
-        real-world problems and unlocking new opportunities. Our app is designed
-        to make learning math engaging, accessible, and personalized. With
-        interactive lessons, practice problems, quizzes, and advanced
-        calculators, Math Sharthi caters to learners of all levels, from
-        beginners to advanced users. Our mission is to simplify complex
-        concepts, provide meaningful practice, and help you build confidence in
-        your math abilities. We are committed to making math education enjoyable
-        and effective through innovative features, real-world applications, and
-        a user-friendly experience. Join us at Math Sharthi and discover the joy
-        of learning math with a partner you can trust.
+       Welcome to Math Sharthi, a cutting-edge AI-powered solution designed to make solving math problems effortless and efficient. As a product of TechSharthi, our application specializes in quickly and accurately solving mathematical problems using PDFs, images, and text inputs. Whether you're a student needing a quick solution, a professional looking for accurate results, or someone facing a complex problem, Math Sharthi is here to assist you.
+At Math Sharthi, we understand that time is valuable, and finding the right solution shouldn't be a hassle. Our advanced algorithms and AI technology ensure that you get precise answers with just a few clicks. We are committed to providing a reliable, user-friendly experience that takes the stress out of solving math problems.
+Join us at Math Sharthi, where technology meets mathematics, and experience a seamless way to solve your math challenges.
       </Typography>
     </Box>
   );

@@ -131,15 +131,12 @@ export const Footer = () => {
             <Typography variant="body2" color="white">
               Copyright© 2024 Tech Sharthi. All Rights Reserved.
             </Typography>
-            <Typography variant="body2" color="white">
-              <Link href="#" color="inherit" underline="none">
-                Conditions
-              </Link>{" "}
-              |{" "}
-              <Link href="#" color="inherit" underline="none">
-                Privacy Policy
-              </Link>
-            </Typography>
+            <Typography variant="body2">
+              <a href="/terms" style={{ color: "#4285f4", textDecoration: "none",}}>
+                Terms of Conditions
+              </a>
+                .
+        </Typography>
           </Box>
         </Container>
       </Box>

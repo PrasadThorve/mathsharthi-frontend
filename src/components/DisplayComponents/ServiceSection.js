@@ -162,8 +162,7 @@ export const ServiceSection = () => {
               textAlign: isMobile ? "center" : "left",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu
-            congue ligula, eget lobortis augue. Pellentesque
+            Discover our range of services: Scan, Solve, and Learn. We make math easy, intuitive, and accessible for everyone.
           </Typography>
         </Box>
       </Box>

@@ -9,37 +9,37 @@ export const MathExplainedSection = () => {
 
   const subjectsLeft = [
     {
-      title: "Elementary math",
+      title: "Algebraic Structures",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Dive deep into the world of algebra, where you’ll explore equations, inequalities, and polynomial functions. Our platform helps you understand and manipulate abstract algebraic structures, preparing you for more advanced mathematical studies.",
     },
     {
-      title: "Algebra",
+      title: "Euclidean Geometry",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Explore the principles of Euclidean Geometry, where you'll learn about points, lines, angles, and shapes. Our resources cover everything from the basics of congruence and similarity to the more intricate properties of circles and polygons.",
     },
     {
-      title: "Geometry",
+      title: "Analytical Trigonometry",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Unlock the power of trigonometry, where you’ll discover the relationships between the angles and sides of triangles. Our interactive tools will guide you through sine, cosine, tangent functions, and their applications in real-world problems.",
     },
   ];
 
   const subjectsRight = [
     {
-      title: "Trigonometry",
+      title: "Statistical Inference",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Develop your statistical reasoning with our in-depth coverage of probability and statistics. Learn how to collect, analyze, and interpret data, and apply these skills to make informed decisions based on statistical evidence.",
     },
     {
-      title: "Statistics",
+      title: "Differential Calculus",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Advance your mathematical understanding with differential calculus. Our resources cover the concepts of limits, derivatives, and their applications, providing you with the tools needed to analyze and solve dynamic problems in various fields.",
     },
     {
-      title: "Calculus",
+      title: "Foundational Arithematic",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales",
+        "Master the basics with our comprehensive resources on arithmetic. From simple addition and subtraction to more complex concepts like fractions and decimals, our tools ensure a strong mathematical foundation for all learners.",
     },
   ];
 

@@ -74,8 +74,8 @@ export const Footer = () => {
               <Typography variant="h6" gutterBottom color="orange">
                 Contact
               </Typography>
-              <Typography sx={{ mb: 1 }}>+91 0000 0000 00</Typography>
-              <Typography sx={{ mb: 1 }}>demo@gmail.com</Typography>
+              <Typography sx={{ mb: 1 }}>+91 9835 732 960</Typography>
+              <Typography sx={{ mb: 1 }}>Info@TechSharthi.ai</Typography>
               <Typography sx={{ mb: 1 }}>techsharthi.com</Typography>
             </Grid>
 
@@ -131,15 +131,12 @@ export const Footer = () => {
             <Typography variant="body2" color="white">
               Copyright© 2024 Tech Sharthi. All Rights Reserved.
             </Typography>
-            <Typography variant="body2" color="white">
-              <Link href="#" color="inherit" underline="none">
-                Conditions
-              </Link>{" "}
-              |{" "}
-              <Link href="#" color="inherit" underline="none">
-                Privacy Policy
-              </Link>
-            </Typography>
+            <Typography variant="body2">
+              <a href="/terms" style={{ color: "#4285f4", textDecoration: "none",}}>
+                Terms and Conditions
+              </a>
+                .
+        </Typography>
           </Box>
         </Container>
       </Box>

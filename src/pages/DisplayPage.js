@@ -78,10 +78,11 @@ const DisplayPage = () => {
   return (
     <Box
       sx={{
-        width: "98vw",
-        height: "100vh",
-        padding: "1%",
-        overflow: "auto",
+        width: "100vw",
+        height: "98vh",
+        // padding: "1%",
+        overflowX: "hidden",
+        overflowY: "auto",
         scrollbarWidth: "none",
         "-ms-overflow-style": "none",
         "&::-webkit-scrollbar": {
@@ -89,13 +90,18 @@ const DisplayPage = () => {
         },
       }}
     >
-      <Box sx={{ height: "100%", width: "100%" }}>
+      <Box sx={{ height: "100%", width: "100%", overflowX: "hidden", scrollbarWidth: "none",
+        "-ms-overflow-style": "none",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        }, }}>
         <Box
           sx={{
             width: "100%",
-            height: isMobile ? "750vh" : "600vh",
+            height: isMobile ? "750vh" : "610vh",
             overflowY: "hidden",
             padding: isMobile ? "40px 0px 20px 0px" : "40px 0px 40px 0px",
+            overflowX: "hidden" ,
             scrollbarWidth: "none",
             "-ms-overflow-style": "none",
             "&::-webkit-scrollbar": {

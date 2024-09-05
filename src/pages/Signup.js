@@ -197,16 +197,9 @@ const Signup = () => {
         <Typography variant="body2">
           By signing up, you agree to our{" "}
           <a href="/terms" style={{ color: "#4285f4", textDecoration: "none" }}>
-            Terms of Service
-          </a>{" "}
-          &amp;{" "}
-          <a
-            href="/privacy"
-            style={{ color: "#4285f4", textDecoration: "none" }}
-          >
-            Privacy Policy
+            Terms and Conditions
           </a>
-          .
+            .
         </Typography>
       </div>
     </div>

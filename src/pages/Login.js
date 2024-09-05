@@ -125,6 +125,9 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={{ marginBottom: "15px" }}
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           <TextField
             variant="outlined"
@@ -139,6 +142,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{ marginBottom: "15px" }}
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           {error && (
             <Typography

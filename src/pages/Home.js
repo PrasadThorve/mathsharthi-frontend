@@ -68,7 +68,7 @@ function Home() {
           height: "100%",
           width: isMobile ? "100%" : "600px",
           boxSizing: "border-box",
-          overflowY: "auto",
+          overflowY: "none",
           padding: isMobile ? "10px" : "20px",
           scrollbarWidth: "none" /* Firefox */,
           "-ms-overflow-style": "none" /* IE and Edge */,

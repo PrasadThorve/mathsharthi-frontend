@@ -64,10 +64,12 @@ const Sidebar = ({ isSidebarOpen }) => {
   const onPlusClick = () => {
     dispatch(setLoading(false));
     dispatch(addNewChat());
+    setSelectedItem("newChat"); // Set the selectedItem for New Chat
     navigate("/chats");
   };
 
   const onClickHome = () => {
+    setSelectedItem("home");
     navigate("/");
   };
 
@@ -147,7 +149,7 @@ const Sidebar = ({ isSidebarOpen }) => {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            backgroundColor: isSidebarOpen ? "transparent" : "#3c38ff",
+            backgroundColor: selectedItem === "newChat" ? "#828282" : isSidebarOpen ? "transparent" : "#3c38ff",
             outline: "none",
             // padding: "",
             borderWidth: "0px",
@@ -387,6 +389,7 @@ const Sidebar = ({ isSidebarOpen }) => {
               margin: "20px 0px 0px 20px",
               display: "flex",
               cursor: "pointer",
+              backgroundColor: selectedItem === "home" ? "transparent" : "transparent",
             }}
           >
             <img
@@ -472,8 +475,12 @@ const Sidebar = ({ isSidebarOpen }) => {
             margin: "10px 0px 0px 10px",
             fontSize: "12px",
             "&:hover": {
-              color: "#202020",
+              color: "transparent", // Make text transparent to show gradient
+                    background: "linear-gradient(90deg, #FF5722, #2196F3)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
             },
+            
           }}
         >
           {isSidebarOpen ? (

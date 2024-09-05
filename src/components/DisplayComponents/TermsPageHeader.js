@@ -50,7 +50,7 @@ const TermsPageHeader = () => {
             src={Logo}
             alt="logo"
             style={{
-              width: "60%",
+              width: "56%",
               height: "60%",
             }}
           />

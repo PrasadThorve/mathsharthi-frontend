@@ -102,15 +102,31 @@ const Login = () => {
             fontSize: "20px",
             fontWeight: "600",
             color: "#edb418",
-            marginBottom: "20px",
+            marginBottom: "10px",
             background:
               "linear-gradient(90deg, #ff7e5f, #feb47b,  #2a91ff, #4557f3)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
         >
-          Math Sharthi / Login
+          Math Sharthi
         </Typography>
+        <Typography
+          component="h1"
+          variant="h5"
+          sx={{
+            fontSize: "20px",
+            fontWeight: "600",
+            color: "#edb418",
+            marginBottom: "10px",
+            background: "#2a91ff",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Login
+        </Typography>
+
         <form onSubmit={handleLogin} style={{ marginBottom: "15px" }}>
           <TextField
             variant="outlined"

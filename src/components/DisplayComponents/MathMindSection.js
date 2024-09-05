@@ -28,7 +28,7 @@ export const MathMindSection = () => {
         sx={{
           fontFamily: "Gupter",
           fontSize: isMobile ? "18px" : "22px",
-          color: "#98A2B3",
+          color: "#575654",
         }}
       >
        Welcome to Math Sharthi, a cutting-edge AI-powered solution designed to make solving math problems effortless and efficient. As a product of TechSharthi, our application specializes in quickly and accurately solving mathematical problems using PDFs, images, and text inputs. Whether you're a student needing a quick solution, a professional looking for accurate results, or someone facing a complex problem, Math Sharthi is here to assist you.

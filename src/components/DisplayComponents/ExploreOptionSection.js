@@ -107,7 +107,7 @@ export const ExploreOptionSection = () => {
           <Paper
             elevation={3}
             sx={{
-              backgroundColor: "#fdeacc",
+              backgroundColor: "#f2f2f2",
               borderRadius: "10px",
               height: "100%",
               width: "90%",
@@ -178,7 +178,7 @@ export const ExploreOptionSection = () => {
           <Paper
             elevation={3}
             sx={{
-              backgroundColor: "#f2f2f2",
+              backgroundColor: "#fdeacc",
               borderRadius: "10px",
               height: "100%",
               width: "90%",
@@ -207,7 +207,7 @@ export const ExploreOptionSection = () => {
               align="center"
               sx={{ color: "#ff7a33", mt: 2 }}
             >
-              ₹0/month
+              ₹2,746.3/month
             </Typography>
             <Box sx={{ mt: 2, textAlign: "start", padding:'1px 10px 15px 20px', }}>
               <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Target Users:</span> Users trying out the service for the first time.</Typography>

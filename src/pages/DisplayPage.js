@@ -94,7 +94,8 @@ const DisplayPage = () => {
           sx={{
             width: "100%",
             height: isMobile ? "750vh" : "600vh",
-            overflowY: "hidden",
+            overflow: "hidden",
+            overflowY: 'auto',
             padding: isMobile ? "40px 0px 20px 0px" : "40px 0px 40px 0px",
             scrollbarWidth: "none",
             "-ms-overflow-style": "none",

@@ -412,7 +412,7 @@ export const ServiceSection = () => {
             gutterBottom
             sx={{ fontFamily: "Gupter", fontSize: isMobile ? "45px" : "55px" }}
           >
-            My <span style={{ color: "#ff7a33" }}>Services</span>
+            My Services
           </Typography>
         </Box>
       </Box>

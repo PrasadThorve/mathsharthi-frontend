@@ -12,7 +12,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../public/Logo.png";
 import { useNavigate } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 const DisplayPageHeader = () => {
   const theme = useTheme();
@@ -30,6 +29,14 @@ const DisplayPageHeader = () => {
 
   const open = Boolean(anchorEl);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    handleMenuClose(); // close the menu after scrolling
+  };
+
   return (
     <Grid
       id="home"
@@ -41,7 +48,7 @@ const DisplayPageHeader = () => {
         justifyContent: "center",
         alignItems: "center",
         marginTop: !isMobile && "20px",
-        marginRight: isMobile && "10px"
+        marginRight: isMobile && "10px",
       }}
     >
       {!isMobile && (
@@ -113,54 +120,19 @@ const DisplayPageHeader = () => {
                   mt: 1, // Adjust spacing between button and menu
                 }}
               >
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#home"
-                  onClick={handleMenuClose}
-                >
-                  Home
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#about"
-                  onClick={handleMenuClose}
-                >
-                  About
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#service"
-                  onClick={handleMenuClose}
-                >
-                  Service
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#pricing"
-                  onClick={handleMenuClose}
-                >
-                  Pricing
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#contact"
-                  onClick={handleMenuClose}
-                >
-                  Contact
-                </MenuItem>
+                <MenuItem onClick={() => scrollToSection("home")}>Home</MenuItem>
+                <MenuItem onClick={() => scrollToSection("about")}>About</MenuItem>
+                <MenuItem onClick={() => scrollToSection("service")}>Service</MenuItem>
+                <MenuItem onClick={() => scrollToSection("pricing")}>Pricing</MenuItem>
+                <MenuItem onClick={() => scrollToSection("contact")}>Contact</MenuItem>
               </Menu>
             </>
           ) : (
             <>
               <Button
-                component={HashLink}
-                smooth
-                to="#home"
+                component="a"
+                href="#home"
+                onClick={() => scrollToSection("home")}
                 sx={{
                   borderRadius: "30px",
                   padding: "10px 20px",
@@ -174,9 +146,9 @@ const DisplayPageHeader = () => {
                 Home
               </Button>
               <Button
-                component={HashLink}
-                smooth
-                to="#about"
+                component="a"
+                href="#about"
+                onClick={() => scrollToSection("about")}
                 sx={{
                   borderRadius: "30px",
                   padding: "10px 20px",
@@ -190,9 +162,9 @@ const DisplayPageHeader = () => {
                 About
               </Button>
               <Button
-                component={HashLink}
-                smooth
-                to="#service"
+                component="a"
+                href="#service"
+                onClick={() => scrollToSection("service")}
                 sx={{
                   borderRadius: "30px",
                   padding: "10px 20px",
@@ -206,9 +178,9 @@ const DisplayPageHeader = () => {
                 Service
               </Button>
               <Button
-                component={HashLink}
-                smooth
-                to="#pricing"
+                component="a"
+                href="#pricing"
+                onClick={() => scrollToSection("pricing")}
                 sx={{
                   borderRadius: "30px",
                   padding: "10px 20px",
@@ -222,9 +194,9 @@ const DisplayPageHeader = () => {
                 Pricing
               </Button>
               <Button
-                component={HashLink}
-                smooth
-                to="#contact"
+                component="a"
+                href="#contact"
+                onClick={() => scrollToSection("contact")}
                 sx={{
                   borderRadius: "30px",
                   padding: "10px 20px",

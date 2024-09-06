@@ -118,7 +118,7 @@ const TermsPageHeader = () => {
                   sx={{
                     borderRadius: "30px",
                     padding: "10px 20px",
-                    color: "white",
+                    color: "black",
                     backgroundColor: "transparent",
                     marginLeft: "10px",
                   }}
@@ -151,7 +151,7 @@ const TermsPageHeader = () => {
                   onClick={() => navigate("/login")}
                   sx={{
                     borderRadius: "30px",
-                    padding: "10px 30px",
+                    padding: "10px 10px",
                     color: "white",
                     backgroundColor: "#FF8C00",
                     marginLeft: "10px",

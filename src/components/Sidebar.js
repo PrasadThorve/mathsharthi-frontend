@@ -87,7 +87,7 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove token from localStorage
-    navigate("/login"); // Redirect to login page
+    navigate("/display"); // Redirect to login page
   };
 
   const onClickAiwriter = () => {

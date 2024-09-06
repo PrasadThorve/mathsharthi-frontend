@@ -9,9 +9,11 @@ import {
   IconButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 import tectsharthilogo from "../public/techsharthilogo.png";
 
 const Header = ({ onClickMobileSidebar }) => {
+  const navigate=useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -32,6 +34,9 @@ const Header = ({ onClickMobileSidebar }) => {
 
         {/* Right-side text */}
         <Box
+        onClick={()=>{
+          navigate('/')
+        }}
           sx={{
             height: "40px",
             width: "180px",
@@ -48,6 +53,7 @@ const Header = ({ onClickMobileSidebar }) => {
             src={tectsharthilogo}
             alt="logo"
             style={{ height: "30px", width: "35px", marginTop: "10px" }}
+
           />
           <Typography sx={{ marginTop: "10px" }}>
             <span

@@ -75,8 +75,8 @@ export const Footer = () => {
                 Contact
               </Typography>
               <Typography sx={{ mb: 1 }}>+91 9835 732 960</Typography>
-              <Typography sx={{ mb: 1 }}>Info@TechSharthi.ai</Typography>
-              <Typography sx={{ mb: 1 }}>techsharthi.com</Typography>
+              <Typography sx={{ mb: 1 }}>Info@techsharthi.com</Typography>
+              <Typography sx={{ mb: 1 }}>www.techsharthi.com</Typography>
             </Grid>
 
             {/* Newsletter Signup */}

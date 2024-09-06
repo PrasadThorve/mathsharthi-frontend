@@ -1,11 +1,20 @@
 import React from 'react';
+import { Box, Button, Grid, Paper, Typography, IconButton } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
 
 const PlanModel = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
+  const handleSubscribeClick = () => {
+    navigate("/subscribe");
+  };
+
   if (!isOpen) return null;
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -16,207 +25,205 @@ const PlanModel = ({ isOpen, onClose }) => {
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1000,
+        overflowY:'auto',
+        paddingTop:'1%',
+        MarginBottom:'5%',
       }}
       onClick={onClose}
     >
-      <div
-        style={{
+      <Paper
+        sx={{
           backgroundColor: '#1c1c1c',
           padding: '20px',
           borderRadius: '10px',
-          maxWidth: '600px',
-          width: '90%',
+          maxWidth: '900px',
+          width: '100%',
           color: 'white',
           position: 'relative',
+          overflow: 'hidden',
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          style={{
+        <IconButton
+          sx={{
             position: 'absolute',
-            top: '10px',
+            top: '5px',
             right: '10px',
-            background: 'none',
-            border: 'none',
             color: 'white',
-            fontSize: '20px',
-            cursor: 'pointer',
+            backgroundColor: '#ff6a00',
+            '&:hover': {
+              backgroundColor: '#e55e00',
+            },
           }}
           onClick={onClose}
         >
-          X
-        </button>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
-          <button
-            style={{
-              backgroundColor: '#4a4aff',
-              color: 'white',
-              border: 'none',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              borderRadius: '5px',
-            }}
-          >
-            Monthly
-          </button>
-          <button
-            style={{
-              backgroundColor: '#333',
-              color: 'white',
-              border: 'none',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              borderRadius: '5px',
-            }}
-          >
-            Annually
-          </button>
-          <button
-            style={{
-              backgroundColor: '#ff6a00',
-              color: 'white',
-              border: 'none',
-              padding: '10px 20px',
-              cursor: 'pointer',
-              borderRadius: '5px',
-            }}
-          >
-            Save 16%
-          </button>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '20px',
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#5a5858',
-              padding: '15px',
-              borderRadius: '10px',
-              width: '30%',
-              textAlign: 'center',
-              margin:"5px",
-            }}
-          >
-            <h2 style={{ color: '#fff', fontSize: '20px' }}>FREE</h2>
-            <h3 style={{ color: '#fff', fontSize: '24px', margin: '10px 0' }}>
-              ₹0/mo
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Basic Usage Volume
-              </li>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Supports 200+ Languages
-              </li>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Limited Pro Features
-              </li>
-            </ul>
-            <button
-              style={{
-                backgroundColor: '#363669',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                borderRadius: '5px',
-                marginTop: '10px',
+          <CloseIcon />
+        </IconButton>
+        {/* <Typography variant="h4" align="center" gutterBottom sx={{ mb: 3 }}>
+          Explore Your <span style={{ color: "#ff7a33" }}>Options</span>
+        </Typography> */}
+        <Grid container spacing={2}>
+          {/* Basic Plan */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Paper
+              elevation={3}
+              sx={{
+                backgroundColor: '#f2f2f2',
+                borderRadius: '10px',
+                padding: '20px',
+                textAlign: 'center',
+                height: 'auto',
               }}
             >
-              Subscribe
-            </button>
-          </div>
-          <div
-            style={{
-              backgroundColor: '#5a5858',
-              padding: '15px',
-              borderRadius: '10px',
-              width: '30%',
-              textAlign: 'center',
-              margin:"5px",
-            }}
-          >
-            <h2 style={{ color: '#fff', fontSize: '20px' }}>PRO</h2>
-            <h3 style={{ color: '#fff', fontSize: '24px', margin: '10px 0' }}>
-              ₹691.4/mo
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Large Usage Volume
-              </li>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Full Access to Chat PDF
-              </li>
-              <li style={{ marginBottom: '10px', color: '#bbb' }}>
-                Full Access to AI Presentation
-              </li>
-            </ul>
-            <button
-              style={{
-                backgroundColor: '#363669',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                borderRadius: '5px',
-                marginTop: '10px',
+              <Typography
+                variant="h5"
+                sx={{
+                  backgroundColor: '#ff7a33',
+                  borderRadius: '10px',
+                  p: 2,
+                  color: '#fff',
+                }}
+              >
+                Basic
+              </Typography>
+              <Typography variant="h6" sx={{ color: '#ff7a33', mt: 2 }}>
+                ₹0/month
+              </Typography>
+              <Box sx={{ mt: 2, textAlign: "start", padding:'1px 10px 15px 20px', }}>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Target Users:</span> Users trying out the service for the first time.</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Usage Volume:</span> Limited usage.</Typography>
+              <Typography variant="h6"
+              align="center"
+              sx={{ color: "#ff7a33", mt: 1 }}>Features :</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Usage Volume :</span> Limited Usage </Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• AI Queries:</span> 10 Gemini API queries per day.</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Supported Languages:</span> 200+ Languages.</Typography>
+               <Button
+                variant="contained"
+                sx={{
+                  backgroundImage:
+              "linear-gradient(90deg,  #4557f3, #2a91ff, #4557f3)",
+                  color: "#fff",
+                  mt: 2,
+                  width: "100%",
+                }}
+                onClick={handleSubscribeClick}
+              >
+                Subscribe
+              </Button>
+            </Box>
+            </Paper>
+          </Grid>
+
+          {/* Pro Plan */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Paper
+              elevation={3}
+              sx={{
+                backgroundColor: '#fdeacc',
+                borderRadius: '10px',
+                padding: '20px',
+                textAlign: 'center',
+                height: 'auto',
               }}
             >
-              Subscribe
-            </button>
-          </div>
-          <div
-            style={{
-              backgroundColor: '#e8f7be',
-              padding: '15px',
-              borderRadius: '10px',
-              width: '30%',
-              textAlign: 'center',
-              margin:"5px",
-            }}
-          >
-            <h2 style={{ color: '#3c3d3a', fontSize: '20px' }}>Unlimited</h2>
-            <h3 style={{ color: '#3c3d3a', fontSize: '24px', margin: '10px 0' }}>
-              ₹2746.3/mo
-            </h3>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '10px', color: '#666960' }}>
-                Unlimited Usage Volume
-              </li>
-              <li style={{ marginBottom: '10px', color: '#666960' }}>
-                Unlimited Chat PDF
-              </li>
-              <li style={{ marginBottom: '10px', color: '#666960' }}>
-                Unlimited AI Presentation
-              </li>
-            </ul>
-            <button
-              style={{
-                backgroundColor: '#363669',
-                color: 'white',
-                border: 'none',
-                padding: '10px 20px',
-                cursor: 'pointer',
-                borderRadius: '5px',
-                marginTop: '10px',
+              <Typography
+                variant="h5"
+                sx={{
+                  backgroundColor: '#ff7a33',
+                  borderRadius: '10px',
+                  p: 2,
+                  color: '#fff',
+                }}
+              >
+                Pro
+              </Typography>
+              <Typography variant="h6" sx={{ color: '#ff7a33', mt: 2 }}>
+                ₹499/month
+              </Typography>
+              <Typography variant="h6" sx={{ color: '#ff7a33', mt: 1 }}>
+                (billed yearly at ₹5,988/year)
+              </Typography>
+              <Box sx={{ mt: 2, textAlign: "start", padding:'1px 10px 15px 20px', }}>
+            <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Target Users:</span> Users requiring regular access to AI services.</Typography>
+            <Typography variant="h6"
+              align="center"
+              sx={{ color: "#ff7a33", mt: 1 }}>Features :</Typography>
+            <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Usage Volume :</span> Moderate </Typography>
+            <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• AI Queries :</span> 200 Gemini API queries per month. </Typography>
+            
+            <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Full Access :</span> Chat PDF with support for up to 2,000 pages per PDF. </Typography>
+            <Button
+                variant="contained"
+                sx={{
+                  backgroundImage:
+                  "linear-gradient(90deg,  #4557f3, #2a91ff, #4557f3)",
+                  color: "#fff",
+                  mt: 2,
+                  width: "100%",
+                }}
+                onClick={handleSubscribeClick}
+              >
+                Subscribe
+              </Button>
+            </Box>
+            </Paper>
+          </Grid>
+
+          {/* Unlimited Plan */}
+          <Grid item xs={12} sm={6} md={4}>
+            <Paper
+              elevation={3}
+              sx={{
+                backgroundColor: '#f2f2f2',
+                borderRadius: '10px',
+                padding: '20px',
+                textAlign: 'center',
+                height: 'auto',
               }}
             >
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+              <Typography
+                variant="h5"
+                sx={{
+                  backgroundColor: '#ff7a33',
+                  borderRadius: '10px',
+                  p: 2,
+                  color: '#fff',
+                }}
+              >
+                Premiuim
+              </Typography>
+              <Typography variant="h6" sx={{ color: '#ff7a33', mt: 2 }}>
+                ₹2,746.3/month
+              </Typography>
+              <Box sx={{ mt: 2, textAlign: "start", padding:'1px 10px 15px 20px', }}>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Target Users:</span> Users trying out the service for the first time.</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Usage Volume:</span> Limited usage.</Typography>
+              <Typography variant="h6"
+              align="center"
+              sx={{ color: "#ff7a33", mt: 1 }}>Features :</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Usage Volume :</span> Limited Usage </Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• AI Queries:</span> 10 Gemini API queries per day.</Typography>
+              <Typography><span style={{color:"black", fontsize:"22px", fontWeight:"bold",}}>• Supported Languages:</span> 200+ Languages.</Typography>
+               <Button
+                variant="contained"
+                sx={{
+                  backgroundImage:
+              "linear-gradient(90deg,  #4557f3, #2a91ff, #4557f3)",
+                  color: "#fff",
+                  mt: 2,
+                  width: "100%",
+                }}
+                onClick={handleSubscribeClick}
+              >
+                Subscribe
+              </Button>
+            </Box>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Paper>
+    </Box>
   );
 };
 

@@ -58,7 +58,7 @@ import {
                   Contact
                 </Typography>
                 <Typography sx={{ mb: 1 }}>+91 9835 732 960</Typography>
-                <Typography sx={{ mb: 1 }}>Info@techsharthi.ai</Typography>
+                <Typography sx={{ mb: 1 }}>Info@techsharthi.com</Typography>
                 <Typography sx={{ mb: 1 }}>www.techsharthi.com</Typography>
               </Grid>
   

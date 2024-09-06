@@ -302,7 +302,7 @@ const Sidebar = ({ isSidebarOpen }) => {
         sx={{
           width: drawerWidth - 20,
           // margin: "0px 0px 100px auto",
-          height: "250px",
+          height: "36%",
           overflow: "auto",
           padding: "10px",
           scrollbarWidth: "none",
@@ -413,7 +413,7 @@ const Sidebar = ({ isSidebarOpen }) => {
                 </span>
                 <span
                   style={{
-                    fontSize: "20px",
+                    fontSize: "17px",
                     fontWeight: "bold",
                     background: "linear-gradient(90deg, #2a91ff, #4557f3)",
                     WebkitBackgroundClip: "text",

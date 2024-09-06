@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { signupUser } from "../services/serviceApi"; // Import the signup service
-import { FaGoogle } from "react-icons/fa";
 import GoogleSignInButton from "../components/GoogleSignInButton";
 import { RotatingLines } from "react-loader-spinner";
 

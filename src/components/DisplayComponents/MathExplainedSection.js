@@ -69,7 +69,7 @@ export const MathExplainedSection = () => {
           width: "100%",
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
           alignItems: isMobile ? "center" : "flex-start",
           textAlign: isMobile && "center",
         }}
@@ -92,7 +92,7 @@ export const MathExplainedSection = () => {
                 variant="body1"
                 sx={{
                   fontFamily: "Gupter",
-                  color: "#98A2B3",
+                  color: "#575958",
                   textAlign: isMobile ? "center" : "left",
                   fontSize: isMobile && "12px",
                 }}
@@ -104,7 +104,7 @@ export const MathExplainedSection = () => {
         </Box>
         {!isMobile && (
           <Box>
-            <img src={devider} alt="Divider" />
+            <img src={devider} alt="Divider" style={{marginTop:'100%',}} />
           </Box>
         )}
         <Box
@@ -130,7 +130,7 @@ export const MathExplainedSection = () => {
                 variant="body1"
                 sx={{
                   fontFamily: "Gupter",
-                  color: "#98A2B3",
+                  color: "#575958",
                   textAlign: isMobile ? "center" : "left",
                   fontSize: isMobile && "12px",
                 }}

@@ -14,7 +14,7 @@ import Logo from "../../public/Logo.png";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-const DisplayPageHeader = () => {
+const TermsPageHeader = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ const DisplayPageHeader = () => {
             src={Logo}
             alt="logo"
             style={{
-              width: "85%",
+              width: "56%",
               height: "60%",
             }}
           />
@@ -62,7 +62,7 @@ const DisplayPageHeader = () => {
             background: "#171717",
             width: isMobile ? "95vw" : "80vw",
             height: "100%",
-            gap: "10px",
+            gap: "600px",
             borderRadius: "50px",
             display: "flex",
             justifyContent: "space-around",
@@ -113,136 +113,45 @@ const DisplayPageHeader = () => {
                   mt: 1, // Adjust spacing between button and menu
                 }}
               >
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#home"
-                  onClick={handleMenuClose}
+                <Button
+                  onClick={() => navigate("/display")}
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "black",
+                    backgroundColor: "transparent",
+                    marginLeft: "10px",
+                  }}
                 >
                   Home
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#about"
-                  onClick={handleMenuClose}
-                >
-                  About
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#service"
-                  onClick={handleMenuClose}
-                >
-                  Service
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#pricing"
-                  onClick={handleMenuClose}
-                >
-                  Pricing
-                </MenuItem>
-                <MenuItem
-                  component={HashLink}
-                  smooth
-                  to="#contact"
-                  onClick={handleMenuClose}
-                >
-                  Contact
-                </MenuItem>
+                </Button>
+              
               </Menu>
             </>
           ) : (
             <>
+            
               <Button
-                component={HashLink}
-                smooth
-                to="#home"
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                component={HashLink}
-                smooth
-                to="#about"
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                About
-              </Button>
-              <Button
-                component={HashLink}
-                smooth
-                to="#service"
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Service
-              </Button>
-              <Button
-                component={HashLink}
-                smooth
-                to="#pricing"
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Pricing
-              </Button>
-              <Button
-                component={HashLink}
-                smooth
-                to="#contact"
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Contact
-              </Button>
-              <Box>
+                  onClick={() => navigate("/display")}
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 30px",
+                    color: "white",
+                    backgroundColor: "#FF8C00",
+                    marginLeft: "10px",
+                  }}
+                >
+                  Home
+                </Button>
+                
+                <Box>
+              
+              
                 <Button
                   onClick={() => navigate("/login")}
                   sx={{
                     borderRadius: "30px",
-                    padding: "10px 20px",
+                    padding: "10px 10px",
                     color: "white",
                     backgroundColor: "#FF8C00",
                     marginLeft: "10px",
@@ -271,4 +180,4 @@ const DisplayPageHeader = () => {
   );
 };
 
-export default DisplayPageHeader;
+export default TermsPageHeader;

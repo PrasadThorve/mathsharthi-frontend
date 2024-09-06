@@ -112,8 +112,7 @@ export const GetPersonalAppSection = () => {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus nunc, posuere in justo vulputate, bibendum sodales ",
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus
-            nunc, posuere in justo vulputate, bibendum sodales
+            Need help with math? We're here for you 24/7. Unlock your potential with expert guidance—anytime, anywhere.
           </Typography>
           <Button
             variant="outlined"

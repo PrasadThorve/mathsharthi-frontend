@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { TextField, Button, Typography, Container, Box } from "@mui/material";
+import { TextField, Button, Typography,  Box } from "@mui/material";
 import { RotatingLines } from "react-loader-spinner";
 
 const Login = () => {
@@ -102,15 +102,31 @@ const Login = () => {
             fontSize: "20px",
             fontWeight: "600",
             color: "#edb418",
-            marginBottom: "20px",
+            marginBottom: "10px",
             background:
               "linear-gradient(90deg, #ff7e5f, #feb47b,  #2a91ff, #4557f3)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
         >
-          Math Sharthi / Login
+          Math Sharthi
         </Typography>
+        <Typography
+          component="h1"
+          variant="h5"
+          sx={{
+            fontSize: "20px",
+            fontWeight: "600",
+            color: "#edb418",
+            marginBottom: "10px",
+            background: "#2a91ff",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Login
+        </Typography>
+
         <form onSubmit={handleLogin} style={{ marginBottom: "15px" }}>
           <TextField
             variant="outlined"
@@ -125,6 +141,9 @@ const Login = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={{ marginBottom: "15px" }}
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           <TextField
             variant="outlined"
@@ -139,6 +158,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             style={{ marginBottom: "15px" }}
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           {error && (
             <Typography

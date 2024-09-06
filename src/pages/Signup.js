@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Typography, Box } from "@mui/material";
 import { signupUser } from "../services/serviceApi"; // Import the signup service
-import { FaGoogle } from "react-icons/fa";
 import GoogleSignInButton from "../components/GoogleSignInButton";
 import { RotatingLines } from "react-loader-spinner";
 
@@ -135,6 +134,9 @@ const Signup = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           <TextField
             label="Email"
@@ -145,6 +147,9 @@ const Signup = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           <TextField
             label="Password"
@@ -155,6 +160,9 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            InputLabelProps={{
+              shrink: true, // Force the label to stay above the input when focused
+            }}
           />
           {error && <Typography color="error">{error}</Typography>}
           {success && <Typography color="success">{success}</Typography>}
@@ -197,16 +205,9 @@ const Signup = () => {
         <Typography variant="body2">
           By signing up, you agree to our{" "}
           <a href="/terms" style={{ color: "#4285f4", textDecoration: "none" }}>
-            Terms of Service
-          </a>{" "}
-          &amp;{" "}
-          <a
-            href="/privacy"
-            style={{ color: "#4285f4", textDecoration: "none" }}
-          >
-            Privacy Policy
+            Terms and Conditions
           </a>
-          .
+            .
         </Typography>
       </div>
     </div>

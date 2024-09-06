@@ -93,8 +93,9 @@ const DisplayPage = () => {
         <Box
           sx={{
             width: "100%",
-            height: isMobile ? "750vh" : "600vh",
-            overflowY: "hidden",
+            height: isMobile ? "auto" : "600vh",
+            overflow: "hidden",
+            overflowY: 'auto',
             padding: isMobile ? "40px 0px 20px 0px" : "40px 0px 40px 0px",
             scrollbarWidth: "none",
             "-ms-overflow-style": "none",

@@ -161,11 +161,12 @@ function AIWriter() {
           />
         </Grid>
         <Grid item xs={6} sx={{ textAlign: "right" }}>
-          <FormControl fullWidth sx={{ mb: 2, width: "98%" }}>
-            <InputLabel>Blog Style</InputLabel>
+          <FormControl fullWidth sx={{ mb: 2, width: "98%" }} variant="outlined">
+            <InputLabel shrink={!!blogStyle}>Blog Style</InputLabel>
             <Select
               value={blogStyle}
               onChange={(e) => setBlogStyle(e.target.value)}
+              label="Blog Style"
             >
               <MenuItem value="Researchers">Researchers</MenuItem>
               <MenuItem value="Data Scientist">Data Scientist</MenuItem>
@@ -173,6 +174,7 @@ function AIWriter() {
             </Select>
           </FormControl>
         </Grid>
+
         <Grid item xs={12}>
           <Button
             variant="contained"

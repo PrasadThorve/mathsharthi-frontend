@@ -19,10 +19,13 @@ import TemplatesSection from "../components/TemplateSection";
 import InputContainer from "../components/InputContainer";
 import { useDispatch, useSelector } from "react-redux";
 import GoogleDriveUpload from "../components/GoogleDriveUpload";
+import { ApiCountDialog } from "../components/ApiCountDialog";
+import PlanModel from "../components/PlanModel";
 
 function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const dispatch = useDispatch();
   const fileInputRef = React.useRef(null);
@@ -83,6 +86,15 @@ function Home() {
           pdfInputRef={pdfInputRef}
           ImageInputRef={ImageInputRef}
         />
+        <ApiCountDialog setModalOpen={setModalOpen} />
+        {isModalOpen && (
+          <PlanModel
+            isOpen={isModalOpen}
+            onClose={() => {
+              setModalOpen(false);
+            }}
+          />
+        )}
         <AISection />
       </Box>
       <InputContainer

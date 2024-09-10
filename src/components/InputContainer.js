@@ -25,7 +25,9 @@ const InputContainer = ({
   const location = useLocation();
   const inputRef = useRef(null);
 
-  const { chats, currentChatIndex } = useSelector((state) => state.chat);
+  const { chats, currentChatIndex, apiCallCount } = useSelector(
+    (state) => state.chat
+  );
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isCameraCaptureOpen, setIsCameraCaptureOpen] = useState(false);
   const [popupButton, setPopupButton] = useState(null);

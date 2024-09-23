@@ -43,7 +43,7 @@ import {
                 <Typography
                   component={HashLink}
                   smooth
-                  to="/display"
+                  to="/"
                   color="#bfbfbf"
                   sx={{ display: "block", mb: 1 }} // Adjust spacing for smaller screens
                 >

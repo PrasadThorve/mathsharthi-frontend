@@ -114,7 +114,7 @@ const TermsPageHeader = () => {
                 }}
               >
                 <Button
-                  onClick={() => navigate("/display")}
+                  onClick={() => navigate("/")}
                   sx={{
                     borderRadius: "30px",
                     padding: "10px 20px",
@@ -132,7 +132,7 @@ const TermsPageHeader = () => {
             <>
             
               <Button
-                  onClick={() => navigate("/display")}
+                  onClick={() => navigate("/")}
                   sx={{
                     borderRadius: "30px",
                     padding: "10px 30px",

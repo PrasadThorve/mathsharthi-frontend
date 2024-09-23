@@ -28,12 +28,12 @@ function App() {
     <AppContext.Provider value={{ selectedItem, setSelectedItem }}>
       <BrowserRouter>
         <Routes>
-          <Route path="/display" element={<DisplayPage />} />
+          <Route path="/" element={<DisplayPage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/terms"  element={<PrivacyPolicy />}/>
           <Route
-            path="/"
+            path="/home"
             element={
               <ProtectedRoute>
                 <Home />

@@ -23,9 +23,12 @@ import { useDispatch, useSelector } from "react-redux";
 import UploadSection from "../components/UploadSection";
 
 import Header from "../components/Header";
+import PlanModel from "../components/PlanModel";
+import { ApiCountDialog } from "../components/ApiCountDialog";
 
 function PdfPage({ setPreviousChatOpen, previousChatOpen }) {
   const isMobile = useMediaQuery("(max-width: 600px)");
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -101,7 +104,15 @@ function PdfPage({ setPreviousChatOpen, previousChatOpen }) {
 
         <CardsPage />
       </Box>
-
+      <ApiCountDialog setModalOpen={setModalOpen} />
+      {isModalOpen && (
+        <PlanModel
+          isOpen={isModalOpen}
+          onClose={() => {
+            setModalOpen(false);
+          }}
+        />
+      )}
       <InputContainer
         fileInputRef={fileInputRef}
         ImageInputRef={ImageInputRef}

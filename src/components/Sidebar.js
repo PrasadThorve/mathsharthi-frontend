@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import {
   Box,
   Button,
-  Drawer,
   List,
   ListItem,
   useMediaQuery,
@@ -13,26 +12,24 @@ import {
 import tectsharthilogo from "../public/techsharthilogo.png";
 import { FaSquarePlus } from "react-icons/fa6";
 import { BsFillFolderFill } from "react-icons/bs";
-import { FaHome } from "react-icons/fa";
-import {
-  MdHistory,
-  MdOutlineArrowBackIos,
-  MdOutlineArrowForwardIos,
-} from "react-icons/md";
+import { MdHistory } from "react-icons/md";
 import { BsPencilSquare } from "react-icons/bs";
 import { GoStack } from "react-icons/go";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
-import { CgMenuRound } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewChat, setCurrentChat, setLoading } from "../store/store";
+import {
+  addNewChat,
+  setCurrentChat,
+  setLoading,
+  clearError,
+} from "../store/store";
 import { AiOutlineAppstore } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import PlanModel from "./PlanModel";
 import { BsFillChatRightDotsFill } from "react-icons/bs";
 import { AppContext } from "../context";
 import { IoMdPricetags } from "react-icons/io";
-import { ToggleButton } from "./ToggleButton";
 
 const Sidebar = ({ isSidebarOpen }) => {
   const theme = useTheme();
@@ -43,7 +40,6 @@ const Sidebar = ({ isSidebarOpen }) => {
   const { selectedItem, setSelectedItem } = useContext(AppContext);
 
   const onIconClick = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -64,6 +60,7 @@ const Sidebar = ({ isSidebarOpen }) => {
   const onPlusClick = () => {
     dispatch(setLoading(false));
     dispatch(addNewChat());
+    dispatch(clearError());
     setSelectedItem("newChat"); // Set the selectedItem for New Chat
     navigate("/chats");
   };
@@ -79,10 +76,6 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   const onClickPdf = () => {
     navigate("/chatwithdoc");
-  };
-
-  const onClickLogin = () => {
-    navigate("/login");
   };
 
   const handleLogout = () => {
@@ -149,7 +142,12 @@ const Sidebar = ({ isSidebarOpen }) => {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            backgroundColor: selectedItem === "newChat" ? "#828282" : isSidebarOpen ? "transparent" : "#3c38ff",
+            backgroundColor:
+              selectedItem === "newChat"
+                ? "#828282"
+                : isSidebarOpen
+                ? "transparent"
+                : "#3c38ff",
             outline: "none",
             // padding: "",
             borderWidth: "0px",
@@ -389,7 +387,8 @@ const Sidebar = ({ isSidebarOpen }) => {
               margin: "20px 0px 0px 20px",
               display: "flex",
               cursor: "pointer",
-              backgroundColor: selectedItem === "home" ? "transparent" : "transparent",
+              backgroundColor:
+                selectedItem === "home" ? "transparent" : "transparent",
             }}
           >
             <img
@@ -476,11 +475,10 @@ const Sidebar = ({ isSidebarOpen }) => {
             fontSize: "12px",
             "&:hover": {
               color: "transparent", // Make text transparent to show gradient
-                    background: "linear-gradient(90deg, #FF5722, #2196F3)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
+              background: "linear-gradient(90deg, #FF5722, #2196F3)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
             },
-            
           }}
         >
           {isSidebarOpen ? (

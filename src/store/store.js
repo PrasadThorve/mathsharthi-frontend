@@ -14,6 +14,9 @@ const initialState = {
   currentChatIndex: 0, // Index of the current chat session
   loading: false,
   fileSelected: false,
+  error: null,
+  openApiDialog: false,
+  // apiCallCount: 0, // Add this line to keep track of API call count
 };
 
 // Create a slice
@@ -42,6 +45,18 @@ const chatSlice = createSlice({
     setCurrentChat: (state, action) => {
       state.currentChatIndex = action.payload;
     },
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    setApiDialog: (state, action) => {
+      state.openApiDialog = action.payload;
+    },
+    // incrementApiCallCount: (state) => {
+    //   state.apiCallCount += 1;
+    // },
   },
 });
 
@@ -53,6 +68,10 @@ export const {
   setFileSelected,
   addNewChat,
   setCurrentChat,
+  setError,
+  clearError,
+  setApiDialog,
+  // incrementApiCallCount, // Export the new action
 } = chatSlice.actions;
 
 // Persist configuration

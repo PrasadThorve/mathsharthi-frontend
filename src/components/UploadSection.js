@@ -1,21 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-  IconButton,
-  useMediaQuery
-} from "@mui/material";
-// import UploadFileIcon from '@mui/icons-material/UploadFile';
+import { Box, Button, Card, Typography, useMediaQuery } from "@mui/material";
+
 import { LuFilePlus2 } from "react-icons/lu";
-// import {useDispatch} from "react-redux"
-// import {useNavigate} from "react-router-dom"
-// import { useLocation } from 'react-router-dom';
+
 import GoogleDriveUpload from "../components/GoogleDriveUpload";
 import pdfImage from "../public/pdfImage.png";
-// import { addNewChat } from '../store/store';
 
 const UploadSection = ({
   pdfInputRef,
@@ -23,8 +12,8 @@ const UploadSection = ({
   pdfPage,
   fileInputRef,
 }) => {
+  const isMobile = useMediaQuery("(max-width:700px)");
 
-  const isMobile =  useMediaQuery('(max-width:700px)')
   const onUploadImageClick = () => {
     ImageInputRef.current.click();
   };
@@ -46,7 +35,7 @@ const UploadSection = ({
         borderColor: "#E0E0E0",
         borderWidth: 1,
         borderStyle: "solid",
-        marginTop: isMobile && "100px"
+        marginTop: isMobile && "100px",
       }}
     >
       <Box

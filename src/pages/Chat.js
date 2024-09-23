@@ -4,16 +4,18 @@ import ContentArea from "../components/ContentArea";
 import ChatContainer from "../components/ChatContainer";
 import InputContainer from "../components/InputContainer";
 import { useDispatch, useSelector } from "react-redux";
+import { ApiCountDialog } from "../components/ApiCountDialog";
+import PlanModel from "../components/PlanModel";
 
 function Chat({ setPreviousChatOpen, previousChatOpen }) {
   const dispatch = useDispatch();
   const fileInputRef = React.useRef(null);
   const ImageInputRef = React.useRef(null);
   const pdfInputRef = React.useRef(null);
-
   const isMobile = useMediaQuery("(max-width: 600px)");
 
   const { chats, currentChatIndex } = useSelector((state) => state.chat);
+  const [isModalOpen, setModalOpen] = React.useState(false);
 
   const renderMessageContent = (content) => {
     if (content[0].type === "text") {
@@ -67,6 +69,15 @@ function Chat({ setPreviousChatOpen, previousChatOpen }) {
         }}
       >
         <ChatContainer renderMessageContent={renderMessageContent} />
+        <ApiCountDialog setModalOpen={setModalOpen} />
+        {isModalOpen && (
+          <PlanModel
+            isOpen={isModalOpen}
+            onClose={() => {
+              setModalOpen(false);
+            }}
+          />
+        )}
       </Box>
       <InputContainer
         pdfInputRef={pdfInputRef}

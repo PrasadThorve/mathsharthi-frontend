@@ -29,14 +29,6 @@ const DisplayPageHeader = () => {
 
   const open = Boolean(anchorEl);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    handleMenuClose(); // close the menu after scrolling
-  };
-
   return (
     <Grid
       id="home"
@@ -120,95 +112,95 @@ const DisplayPageHeader = () => {
                   mt: 1, // Adjust spacing between button and menu
                 }}
               >
-                <MenuItem onClick={() => scrollToSection("home")}>Home</MenuItem>
-                <MenuItem onClick={() => scrollToSection("about")}>About</MenuItem>
-                <MenuItem onClick={() => scrollToSection("service")}>Service</MenuItem>
-                <MenuItem onClick={() => scrollToSection("pricing")}>Pricing</MenuItem>
-                <MenuItem onClick={() => scrollToSection("contact")}>Contact</MenuItem>
+                <MenuItem>
+                  <a href="#home" onClick={handleMenuClose}>
+                    Home
+                  </a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="#about" onClick={handleMenuClose}>
+                    About
+                  </a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="#service" onClick={handleMenuClose}>
+                    Service
+                  </a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="#pricing" onClick={handleMenuClose}>
+                    Pricing
+                  </a>
+                </MenuItem>
+                <MenuItem>
+                  <a href="#contact" onClick={handleMenuClose}>
+                    Contact
+                  </a>
+                </MenuItem>
               </Menu>
             </>
           ) : (
             <>
-              <Button
-                component="a"
-                href="#home"
-                onClick={() => scrollToSection("home")}
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Home
-              </Button>
-              <Button
-                component="a"
-                href="#about"
-                onClick={() => scrollToSection("about")}
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                About
-              </Button>
-              <Button
-                component="a"
-                href="#service"
-                onClick={() => scrollToSection("service")}
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Service
-              </Button>
-              <Button
-                component="a"
-                href="#pricing"
-                onClick={() => scrollToSection("pricing")}
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Pricing
-              </Button>
-              <Button
-                component="a"
-                href="#contact"
-                onClick={() => scrollToSection("contact")}
-                sx={{
-                  borderRadius: "30px",
-                  padding: "10px 20px",
-                  color: "white",
-                  fontWeight: "bold",
-                  "&.active": {
-                    backgroundColor: "#0099FF",
-                  },
-                }}
-              >
-                Contact
-              </Button>
+              <a href="#home" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Home
+                </Button>
+              </a>
+              <a href="#about" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  About
+                </Button>
+              </a>
+              <a href="#service" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Service
+                </Button>
+              </a>
+              <a href="#pricing" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Pricing
+                </Button>
+              </a>
+              <a href="#contact" style={{ textDecoration: "none" }}>
+                <Button
+                  sx={{
+                    borderRadius: "30px",
+                    padding: "10px 20px",
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Contact
+                </Button>
+              </a>
               <Box>
                 <Button
                   onClick={() => navigate("/login")}

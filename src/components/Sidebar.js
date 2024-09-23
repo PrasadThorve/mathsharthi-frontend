@@ -70,7 +70,7 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   const onClickHome = () => {
     setSelectedItem("home");
-    navigate("/");
+    navigate("/home");
   };
 
   const onClickChatHistory = () => {
@@ -87,7 +87,7 @@ const Sidebar = ({ isSidebarOpen }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove token from localStorage
-    navigate("/display"); // Redirect to login page
+    navigate("/"); // Redirect to login page
   };
 
   const onClickAiwriter = () => {

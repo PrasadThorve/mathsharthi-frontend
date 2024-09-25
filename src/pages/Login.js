@@ -26,7 +26,7 @@ const Login = () => {
         const data = await response.json();
         setIsLoading(false);
         localStorage.setItem("token", data.access_token); // Save JWT token in localStorage
-        navigate("/"); // Redirect to Home page
+        navigate("/home"); // Redirect to Home page
       } else {
         const errData = await response.json();
         setIsLoading(false);

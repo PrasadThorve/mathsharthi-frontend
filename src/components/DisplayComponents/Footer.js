@@ -6,9 +6,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import Logo from "../../public/Logo.png";
-import { HashLink } from "react-router-hash-link";
 
 export const Footer = () => {
   return (
@@ -41,27 +39,24 @@ export const Footer = () => {
                 Navigation
               </Typography>
               <Typography
-                component={HashLink}
-                smooth
-                to="#home"
+                component="a"
+                href="#home"
                 color="#bfbfbf"
                 sx={{ display: "block", mb: 1 }} // Adjust spacing for smaller screens
               >
                 Home
               </Typography>
               <Typography
-                component={HashLink}
-                smooth
-                to="#about"
+                component="a"
+                href="#about"
                 color="#bfbfbf"
                 sx={{ display: "block", mb: 1 }}
               >
                 About Us
               </Typography>
               <Typography
-                component={HashLink}
-                smooth
-                to="#service"
+                component="a"
+                href="#service"
                 color="#bfbfbf"
                 sx={{ display: "block", mb: 1 }}
               >
@@ -132,11 +127,11 @@ export const Footer = () => {
               Copyright© 2024 Tech Sharthi. All Rights Reserved.
             </Typography>
             <Typography variant="body2">
-              <a href="/terms" style={{ color: "#4285f4", textDecoration: "none",}}>
+              <a href="/terms" style={{ color: "#4285f4", textDecoration: "none" }}>
                 Terms and Conditions
               </a>
-                .
-        </Typography>
+              .
+            </Typography>
           </Box>
         </Container>
       </Box>

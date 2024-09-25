@@ -37,13 +37,13 @@ const InputContainer = ({
   const onFileChange = (event) => {
     setIsPopupOpen(false);
     handleFileChange(event, dispatch, chats, currentChatIndex);
-    if (location.pathname === "/" || location.pathname === "/chatwithdoc") {
+    if (location.pathname === "/home" || location.pathname === "/chatwithdoc") {
       navigate("/chats");
     }
   };
 
   const OnImageChange = () => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       // dispatch(addNewChat());
       ImageInputRef.current.click();
       navigate("/chats");
@@ -55,13 +55,13 @@ const InputContainer = ({
   const onCapturePic = (imageSrc) => {
     setIsPopupOpen(false);
     handleCapture(imageSrc, dispatch, chats, currentChatIndex);
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       navigate("/chats");
     }
   };
 
   const onSendMessage = () => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/home") {
       // dispatch(addNewChat())
       handleSendMessage(chats, currentChatIndex, dispatch);
       navigate("/chats");

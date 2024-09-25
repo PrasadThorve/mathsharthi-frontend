@@ -53,7 +53,7 @@ const Signup = () => {
       setIsLoading(false);
       localStorage.setItem("token", data.access_token);
       console.log("Login successful");
-      navigate("/");
+      navigate("/home");
     } else {
       console.log("Login failed from signin page.", data.error || data);
       setIsLoading(false);

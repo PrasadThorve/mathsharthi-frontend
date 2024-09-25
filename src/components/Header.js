@@ -35,7 +35,7 @@ const Header = ({ onClickMobileSidebar }) => {
         {/* Right-side text */}
         <Box
         onClick={()=>{
-          navigate('/')
+          navigate('/home')
         }}
           sx={{
             height: "40px",
